@@ -8,15 +8,32 @@
 
 We will provide you with some cases you might find useful when you need to extend a **Magento 2 JavaScript** element.
 
-## Case 1
+## Case 1 - Magento 2 Widgets - Modification
 
-You want to modify the function `init()` in `vendor/magento/module-catalog/view/frontend/web/js/...`
+_The method is found inside a ```$.widget()```_
 
+__Example__  
+You want to modify the method `ajaxSubmit()` in `vendor/magento/module-catalog/view/frontend/js/catalog-add-to-cart.js`
+
+```javascript
+define([
+    /* [...] */
+], function (/* [...] */) {
+    'use strict';
+
+    $.widget('mage.catalogAddToCart', {        
+
+        ajaxSubmit: function(form) {
+            /* [...] */
+        }
+
+    });
+
+    return $.mage.catalogAddToCart;
+});
 ```
-CODE BLOCK
-```
 
-Go to [Case 1](case1/case1.md).
+#### Go to [Case 1](case1/README.md).
 
 ## Case 2
 
