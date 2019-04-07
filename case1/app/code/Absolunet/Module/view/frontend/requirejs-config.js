@@ -12,7 +12,7 @@ var config = {
     config: {
         mixins: {
             'Magento_Catalog/js/catalog-add-to-cart': {
-                'Absolunet_Module/js/catalog-add-to-cart-module-mixin': true  // Mixin example
+                'Absolunet_Module/js/catalog-add-to-cart-module-mixin': true // Mixin example
             }
         }
     }

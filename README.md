@@ -35,15 +35,30 @@ define([
 
 #### Go to [Case 1](case1/README.md).
 
-## Case 2
+## Case 2 - Magento 2 Components - Modification
 
-You want to add a new function in `vendor/magento/module-catalog/view/frontend/web/js/...`
+_The method is found inside a ```Component.extend()```_
 
+__Example__  
+You want to modify the method `getCartItems()` in `vendor/magento/module-checkout/view/frontend/web/js/view/minicart.js`
+
+```javascript
+define([
+    /* [...] */
+], function(/* [...] */) {
+    'use strict';
+
+    return Component.extend({
+
+        getCartItems: function() {
+            /* [...] */
+        }
+
+    });
+});
 ```
-CODE BLOCK
-```
 
-Go to [Case 2](case2/case2.md).
+#### Go to [Case 2](case2/README.md).
 
 ## Authors
 

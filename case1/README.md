@@ -22,24 +22,26 @@ define([
     return $.mage.catalogAddToCart;
 });
 ```
+You can find the Widget's name in the original module's ```requirejs-config.js```.
 
 ### Scenario 1 - Via a custom THEME
 
-There are two ways to achieve this.  
-You can find the Widget's name in the original module's ```requirejs-config.js```.
+There are two ways to achieve this.
 
 ##### 1 - Using a mixin (Recommended)
 - [THEME/MODULE/requirejs-config.js](app/design/frontend/Absolunet/theme/Magento_Catalog/requirejs-config.js)
 - [THEME/MODULE/web/js/catalog-add-to-cart-theme-mixin.js](app/design/frontend/Absolunet/theme/Magento_Catalog/web/js/catalog-add-to-cart-theme-mixin.js)
 
-_CAUTION - The mixin's filename must be different from the original file._
+_CAUTION - The mixin's filename must be different from the original file._  
+Using a mixin on the file prevents having to override the original file.  
+You can then pinpoint what method you want to modify.
 
 ##### 2 - Overriding the file (NOT Recommended)
 - [THEME/MODULE/web/js/catalog-add-to-cart.js](app/design/frontend/Absolunet/theme/Magento_Catalog/web/js/catalog-add-to-cart.js)
 - [THEME/MODULE/requirejs-config.js](app/design/frontend/Absolunet/theme/Magento_Catalog/requirejs-config.js) (Optional - If different filename)
 - [THEME/MODULE/web/js/catalog-add-to-cart-theme-override.js](app/design/frontend/Absolunet/theme/Magento_Catalog/web/js/catalog-add-to-cart-theme-override.js) (Optional - If different filename)
 
-_The filename of the override should be the same as the original file._  
+_The filename of the override normally is the same as the original file._  
 _If the filename has to be different, use RequireJS to specify a new name._
 
 When you absolutely have to override the file, don't forget to add ```// comments``` to make it clear what was changed.  
@@ -53,8 +55,7 @@ CUSTOM CODE
 
 ### Scenario 2 - Via a custom MODULE
 
-There are two ways to achieve this.  
-You can find the Widget's name in the original module's ```requirejs-config.js```.
+There are two ways to achieve this.
 
 _CAUTION - Be sure to add the original module to your ```<sequence>``` in ```etc/module.xml```._  
 [CODE/MODULE/etc/module.xml](app/code/Absolunet/Module/etc/module.xml)
@@ -62,6 +63,9 @@ _CAUTION - Be sure to add the original module to your ```<sequence>``` in ```etc
 ##### 1 - Using a mixin (Recommended)
 - [CODE/MODULE/view/frontend/requirejs-config.js](app/code/Absolunet/Module/view/frontend/requirejs-config.js)
 - [CODE/MODULE/view/frontend/web/js/catalog-add-to-cart-module-mixin.js](app/code/Absolunet/Module/view/frontend/web/js/catalog-add-to-cart-module-mixin.js)
+
+Using a mixin on the file prevents having to override the original file.  
+You can then pinpoint what method you want to modify.
 
 ##### 2 - Overriding the file (NOT Recommended)
 - [CODE/MODULE/view/frontend/requirejs-config.js](app/code/Absolunet/Module/view/frontend/requirejs-config.js)
@@ -79,9 +83,6 @@ CUSTOM CODE
 ### A word about Magento 2 Mixins
 
 >A Magento 2 RequireJS “mixin” allows you to programmatically listen for the initial instantiation of any RequireJS module and manipulate that module before returning it.
-
-Using a mixin on the file prevents having to override the original file.  
-You can then pinpoint what method you want to modify.
 
 **Sources**
 

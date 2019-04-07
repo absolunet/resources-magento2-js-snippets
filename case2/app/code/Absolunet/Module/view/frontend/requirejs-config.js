@@ -6,13 +6,13 @@
 var config = {
     map: {
         '*': {
-            catalogAddToCart: 'Magento_Catalog/js/catalog-add-to-cart-theme-override' // Override example (Optional - If different filename)
+            'Magento_Checkout/js/view/minicart': 'Absolunet_Module/js/view/minicart-module-override' // Override example
         }
     },
     config: {
         mixins: {
-            catalogAddToCart: {
-                'Magento_Catalog/js/catalog-add-to-cart-theme-mixin': true // Mixin example
+            'Magento_Checkout/js/view/minicart': {
+                'Absolunet_Module/js/view/minicart-module-mixin': true // Mixin example
             }
         }
     }
